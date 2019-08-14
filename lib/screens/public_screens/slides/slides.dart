@@ -173,10 +173,9 @@ class SlidesScreen extends StatelessWidget {
                                 fontSize: 16.0,
                               ),
                             ),
-                            onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                            onPressed: () => Navigator.pushNamed(
                               context,
                               LoginScreen.route,
-                              (Route route) => false,
                             ),
                             color:
                                 Theme.of(context).primaryColor.withOpacity(0.7),
@@ -188,8 +187,6 @@ class SlidesScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-
-                  // )
                 ],
               ),
             )
