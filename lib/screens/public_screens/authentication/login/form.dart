@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tribe/blocs/Authentication/bloc.dart';
 import 'package:tribe/blocs/Authentication/reducer.dart';
 import 'package:tribe/blocs/IfAuthenticated/bloc.dart';
+import 'package:tribe/main.dart';
 import 'package:tribe/models/Login.dart';
 import 'package:tribe/screens/public_screens/authentication/login/login_button.dart';
 import 'package:tribe/screens/public_screens/authentication/login/login_with_social_button.dart';
@@ -86,6 +87,7 @@ class _LoginFormState extends State<LoginForm> {
         }
         if (state.isSuccess) {
           BlocProvider.of<IfAuthenticatedBloc>(context).dispatch(LoggedIn());
+          Navigator.of(context).popAndPushNamed(RootScreen.route);
         }
       },
       child: Form(
